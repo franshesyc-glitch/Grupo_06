@@ -1,108 +1,233 @@
 <!DOCTYPE html>
+
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Business Case · Interbank · Créditos MIVIVIENDA en Lima</title>
+
 <style>
+
 :root{--g:#00843d;--gd:#0a3d2e;--gl:#e8f4ec;--y:#f2b705;--r:#d64545;--ink:#17212b;--mute:#5d6b78;--line:#e1e6ea;--bg:#f5f7f6;--w:#fff}
+
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+
 body{margin:0;font:16px/1.65 "Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
 nav{position:sticky;top:0;z-index:9;background:rgba(10,61,46,.97);backdrop-filter:blur(6px)}
+
 nav .wrap{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;white-space:nowrap}
+
 nav b{color:#fff;font-size:15px;letter-spacing:.3px;margin-right:auto}nav a{color:#cfe8d8;text-decoration:none;font-size:13.5px}nav a:hover{color:#fff}
+
 .hero{background:linear-gradient(135deg,#0a3d2e 0%,#00843d 70%,#5fb36b 100%);color:#fff;padding:56px 0 64px}
+
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center}
+
 .logos{display:flex;gap:14px;align-items:center;margin-bottom:18px;min-height:8px}.logos img{height:42px;background:#fff;border-radius:8px;padding:5px 10px}
+
 .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#bfe3c9;margin:0 0 10px}
+
 h1{font-size:clamp(26px,4vw,40px);line-height:1.15;margin:0 0 12px}.hero p{color:#dff1e5;margin:0 0 8px}
+
 .kpi{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:22px}
+
 .kpi small{color:#cfe8d8;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+
 .kpi .v{font-size:60px;font-weight:700;line-height:1.05}.kpi .v span{font-size:16px;font-weight:500;color:#ffe08a;margin-left:8px}
+
 .bar{position:relative;height:12px;border-radius:6px;background:rgba(255,255,255,.25);margin:20px 0 6px}.bar i{position:absolute;left:0;top:0;bottom:0;width:65%;background:var(--y);border-radius:6px}
+
 .bar u{position:absolute;left:75%;top:-6px;bottom:-6px;width:3px;background:#fff}.sc{display:flex;justify-content:space-between;font-size:12px;color:#cfe8d8}
+
 .kpi .v b{font-weight:700;font-variant-numeric:tabular-nums}.kpi .v em{font-style:normal;font-size:14px;font-weight:600;margin-left:10px;padding:3px 12px;border-radius:20px;vertical-align:middle;transition:background .4s}
+
 .bar i{transition:width .7s cubic-bezier(.2,.8,.2,1)}#sp{width:100%;height:46px;margin-top:10px;display:block}
+
 .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.pills button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#dff1e5;border-radius:20px;padding:4px 13px;font:inherit;font-size:13px;cursor:pointer;transition:all .25s}.pills button:hover{background:rgba(255,255,255,.15)}.pills button[aria-pressed=true]{background:#fff;color:#0a3d2e;font-weight:600;border-color:#fff}
+
 section{padding:54px 0}section:nth-of-type(even){background:var(--w)}
+
 .sh{display:flex;align-items:center;gap:12px;margin-bottom:6px}.sh i{width:5px;height:30px;background:var(--g);border-radius:3px}
+
 h2{font-size:28px;margin:0}.lead{color:var(--mute);margin:0 0 24px;max-width:780px}h3{font-size:17px;margin:0 0 6px;color:var(--gd)}
+
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+
+/* Capa de datos: tarjetas compactas y nombres de tablas más pequeños */
+#tablas.grid{grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px}
+#tablas .card{padding:12px 14px;border-radius:10px;min-width:0}
+#tablas .card h3{font-size:12.5px;line-height:1.35;margin:0 0 5px;overflow-wrap:anywhere}
+#tablas .card p{font-size:12px;line-height:1.45}
+
 .card{background:var(--w);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 1px 2px rgba(10,61,46,.05)}
+
 section:nth-of-type(even) .card{background:var(--bg)}.card p{margin:0;color:var(--mute);font-size:14.5px}
+
 .num{font-size:30px;font-weight:700;color:var(--g);line-height:1.1}.num small{font-size:13px;color:var(--mute);font-weight:500;display:block;margin-top:2px}
+
 .formula{background:var(--gd);color:#fff;border-radius:14px;padding:22px;text-align:center;margin:0 0 18px;font-size:15px}.formula hr{border:0;border-top:2px solid #6fbf8a;margin:10px 40px}
+
 .sem{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:14px}.sem div{border-radius:12px;padding:14px 16px;color:#fff;font-size:14px}.sem b{display:block;font-size:20px}
+
 .two{display:grid;gap:22px;grid-template-columns:1fr 1fr}
+
 table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--w);border-radius:12px;overflow:hidden;border:1px solid var(--line)}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}th{background:var(--gd);color:#fff;font-weight:600}td:last-child{text-align:right;font-weight:600}
-figure.shot{margin:16px 0 0;border-radius:12px;overflow:hidden}figure.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:12px}
+
+figure.shot{margin:16px 0 0;border-radius:12px;overflow:hidden}
+figure.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:12px}
+
+/* Capturas de las preguntas 1 al 10: tamaño controlado y sin ampliar imágenes pequeñas */
+.q figure.shot img{
+  display:block;
+  width:auto;
+  max-width:min(100%, 820px);
+  height:auto;
+  margin:0 auto;
+  border:1px solid var(--line);
+  border-radius:10px;
+}
+
 figure.shot:not(.ok) img{display:none}.ph{border:2px dashed #9bb8a5;border-radius:12px;background:#f1f7f3;color:var(--mute);text-align:center;padding:34px 16px;font-size:14px}.ph b{display:block;color:var(--g);margin-bottom:4px}.ph code{background:#fff;border:1px solid var(--line);padding:1px 7px;border-radius:5px;color:var(--ink)}figure.ok .ph{display:none}
+
 .q{background:var(--w);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+
 .qh{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}.qn{background:var(--g);color:#fff;font-weight:700;font-size:12.5px;padding:3px 12px;border-radius:20px;letter-spacing:.04em}
+
 .chip{font-size:12px;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--mute);background:var(--bg)}.qt{font-size:14px;color:var(--mute);margin:0 0 12px}
+
 .ans{background:var(--gl);border-left:5px solid var(--g);border-radius:8px;padding:12px 16px;font-size:17px;font-weight:600;color:var(--gd)}
+
 .dl{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.dl a{background:var(--g);color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-size:14px}.dl a.o{background:var(--w);color:var(--g);border:1px solid var(--g)}
+
 ul.c{padding-left:20px;margin:0}ul.c li{margin-bottom:8px}.note{font-size:13px;color:var(--mute);margin-top:12px}
+
 footer{background:var(--gd);color:#bfe3c9;padding:30px 0;font-size:13.5px;text-align:center}
+
 @media(max-width:800px){.hero .wrap,.two{grid-template-columns:1fr}.kpi .v{font-size:48px}}
+
 </style></head><body>
+
 <nav><div class="wrap"><b>Interbank · MIVIVIENDA</b><a href="#resumen">Resumen</a><a href="#indicador">Indicador</a><a href="#caso">Caso de negocio</a><a href="#datos">Datos</a><a href="#dashboard">Dashboard</a><a href="#preguntas">Preguntas</a><a href="#conclusiones">Conclusiones</a></div></nav>
+
 <header class="hero"><div class="wrap"><div>
+
 <div class="logos"><img src="imagenes/logo_interbank.png" alt="Interbank" onerror="this.remove()"><img src="imagenes/logo_mivivienda.png" alt="Fondo MIVIVIENDA" onerror="this.remove()"></div>
+
 <p class="eyebrow">Business Case · Grupo VI</p>
+
 <h1>Participación de Interbank en créditos hipotecarios MIVIVIENDA en Lima</h1>
+
 <p>Fondo MIVIVIENDA · Tablero comercial para cerrar la brecha entre el 13% actual y la meta de 15%.</p>
+
 <p style="font-size:14px;color:#bfe3c9">Integrantes: [agrega aquí los nombres del equipo]</p></div>
+
 <div class="kpi"><small id="kl"></small><div class="v"><b id="kv">13.00</b>%<em id="kz"></em></div>
+
 <div class="bar"><i id="kb"></i><u></u></div><div class="sc"><span>0%</span><span>Meta 15%</span><span>20%</span></div>
+
 <svg id="sp" viewBox="0 0 300 46" role="img" aria-label="Evolución mensual del indicador"></svg>
+
 <div class="pills" id="pills" role="group" aria-label="Elegir mes"></div>
+
 <p id="kt" style="margin:12px 0 0;font-size:14px"></p></div></div></header>
 
+
+
 <section id="resumen"><div class="wrap"><div class="sh"><i></i><h2>Resumen ejecutivo</h2></div>
+
 <p class="lead">Interbank participa con 13% del mercado mensual de créditos hipotecarios MIVIVIENDA en Lima. Este caso propone una estrategia comercial y digital para llegar a 15%, y un tablero en Power BI para monitorear el avance.</p>
+
 <div class="grid"><div class="card"><div class="num">13%<small>participación actual</small></div></div><div class="card"><div class="num">15%<small>meta del indicador</small></div></div><div class="card"><div class="num">2,000<small>créditos de mercado por mes</small></div></div><div class="card"><div class="num">S/ 250,000<small>ticket promedio</small></div></div><div class="card"><div class="num">S/ 3 M<small>costo único de implementación</small></div></div></div>
+
 <figure class="shot"><img src="imagenes/Diagrama_de_arquitectura.jpg" alt="Diagrama de arquitectura" onload="this.parentNode.classList.add('ok')"><div class="ph"><b>Diagrama de arquitectura</b>Agrega tu imagen en <code>imagenes/Diagrama_de_arquitectura.jpg</code></div></figure></div></section>
 
+
+
 <section id="indicador"><div class="wrap"><div class="sh"><i></i><h2>El indicador</h2></div>
+
 <p class="lead">Indicador mensual de porcentaje de participación de créditos hipotecarios MIVIVIENDA en Lima (Interbank). Mide qué parte del mercado mensual colocó Interbank, con un ticket promedio de S/ 250,000.</p>
+
 <div class="formula">Créditos MIVIVIENDA en Lima de Interbank (mes)<hr>Créditos MIVIVIENDA en Lima de todos los bancos (mes) &nbsp;× 100</div>
+
 <div class="sem"><div style="background:#2e9e4f"><b>≥ 15%</b>Participación alta · objetivo alcanzado</div><div style="background:#d99a00"><b>≥ 10% y &lt; 15%</b>Participación media · en proceso</div><div style="background:var(--r)"><b>&lt; 10%</b>Participación baja</div></div>
+
 <p class="note">Unidad: porcentual (%) · Frecuencia: mensual · Impacto: cada punto porcentual equivale a unos S/ 5 millones de cartera, con el mercado constante.</p></div></section>
 
+
+
 <section id="caso"><div class="wrap"><div class="sh"><i></i><h2>Caso de negocio</h2></div>
+
 <div class="two"><div><h3>Objetivo</h3><p>Elevar la participación de Interbank de 13% (zona amarilla) a 15% (zona verde) en el mercado MIVIVIENDA de Lima.</p><h3 style="margin-top:16px">Estrategia</h3><ul class="c"><li>Campañas dirigidas a compradores de primera vivienda.</li><li>Créditos preaprobados y tasas promocionales.</li><li>Alianzas con empresas inmobiliarias.</li><li>Herramientas digitales para simular, evaluar, aprobar y desembolsar más rápido.</li></ul></div>
+
 <div><h3>Proyección y brecha</h3><table><tr><th>Concepto</th><th>Valor</th></tr><tr><td>Participación actual</td><td>13.00%</td></tr><tr><td>Meta</td><td>15.00%</td></tr><tr><td>Brecha</td><td>2.00 pp</td></tr><tr><td>Créditos Interbank (actual → meta)</td><td>260 → 300</td></tr><tr><td>Cartera mensual (actual → meta)</td><td>S/ 65 M → S/ 75 M</td></tr><tr><td>Incremento mensual / anual</td><td>S/ 10 M / S/ 120 M</td></tr></table></div></div></div></section>
 
+
+
 <section id="datos"><div class="wrap"><div class="sh"><i></i><h2>Capa de datos</h2></div>
+
 <p class="lead">Modelo relacional en Azure SQL, esquema <b>G6</b>, con 9 tablas. Los datos son ficticios y cubren de marzo a setiembre de 2026 (2,000 operaciones de Interbank).</p>
+
 <div class="grid" id="tablas"></div>
+
 <figure class="shot"><img src="imagenes/Diagrama_ER.jpg" alt="Diagrama entidad-relación" onload="this.parentNode.classList.add('ok')"><div class="ph"><b>Diagrama entidad-relación</b>Agrega tu imagen en <code>imagenes/Diagrama_ER.jpg</code></div></figure>
+
 <div class="dl"><a href="archivos/00_ALL_IN_ONE.sql" download>Script SQL completo (G6)</a><a class="o" href="archivos/01_create_tables.sql" download>Solo creación de tablas</a><a class="o" href="archivos/Datos_Indicador_Mivivienda_G6.xlsx" download>Datos en Excel</a></div></div></section>
 
+
+
 <section id="dashboard"><div class="wrap"><div class="sh"><i></i><h2>Dashboard comercial</h2></div>
+
 <p class="lead">Tablero en Power BI con el indicador, el semáforo y la evolución mensual. Fecha de actualización: 30 de setiembre de 2026.</p>
+
 <figure class="shot"><img src="imagenes/Dashboard_Principal.jpg" alt="Dashboard principal" onload="this.parentNode.classList.add('ok')"><div class="ph"><b>Dashboard principal</b>Agrega tu captura en <code>imagenes/Dashboard_Principal.jpg</code></div></figure></div></section>
 
+
+
 <section id="preguntas"><div class="wrap"><div class="sh"><i></i><h2>Preguntas de negocio</h2></div>
+
 <p class="lead">Diez preguntas que responde el tablero, cada una con su periodo, entidad, respuesta y visual de Power BI.</p><div id="qs"></div></div></section>
 
+
+
 <section id="conclusiones"><div class="wrap"><div class="sh"><i></i><h2>Conclusiones</h2></div>
+
 <ul class="c"><li><b>La brecha es medible:</b> faltan 2.00 pp, es decir 40 créditos más al mes (≈ S/ 10 millones mensuales y S/ 120 millones al año).</li><li><b>El indicador es estable:</b> oscila 0.70 pp entre marzo y setiembre de 2026 sin una tendencia clara hacia el 15%.</li><li><b>Hay fuga recuperable:</b> 106 operaciones desistidas o rechazadas; aun recuperándolas todas, el promedio quedaría en 13.74%.</li><li><b>Oportunidad en el crédito Verde:</b> aporta 1.93 pp; duplicarlo cerraría casi toda la brecha.</li></ul>
+
 <p class="note">Las cifras del tablero provienen de datos ficticios generados para el esquema G6.</p></div></section>
+
 <footer>Business Case · Interbank · Fondo MIVIVIENDA · Grupo VI · Datos actualizados al 30 de setiembre de 2026</footer>
+
 <script>
+
 const MO=[["Mar", "marzo", 12.82, 257, 2005], ["Abr", "abril", 13.1, 266, 2030], ["May", "mayo", 13.39, 275, 2054], ["Jun", "junio", 12.9, 265, 2055], ["Jul", "julio", 13.03, 261, 2003], ["Ago", "agosto", 12.69, 256, 2018], ["Set", "setiembre", 13.0, 260, 2000]];let cur=null,sel=MO.length-1;const $=i=>document.getElementById(i),f2=v=>v.toFixed(2);
+
 const Z=v=>v>=15?['zona verde','#2e9e4f','#fff']:v>=10?['zona amarilla','#f2b705','#3a2a00']:['zona roja','#d64545','#fff'];
+
 function show(i){sel=i;const m=MO[i],z=Z(m[2]),need=Math.ceil(.15*m[4])-m[3];
+
 $('kl').textContent='Participación · '+m[1]+' 2026';$('kz').textContent=z[0];$('kz').style.background=z[1];$('kz').style.color=z[2];$('kb').style.width=(m[2]/20*100)+'%';
+
 $('kt').innerHTML=need>0?'Brecha de <b>'+f2(15-m[2])+' pp</b> · '+m[3]+' de '+m[4].toLocaleString('en-US')+' créditos; faltan <b>'+need+'</b> para la meta (≈ S/ '+(need*0.25).toFixed(1)+' millones).':'Meta alcanzada: '+m[3]+' de '+m[4].toLocaleString('en-US')+' créditos.';
+
 const from=cur===null?m[2]:cur,to=m[2],t0=performance.now(),dur=matchMedia('(prefers-reduced-motion:reduce)').matches?0:600;
+
 (function step(t){const k=dur?Math.min(1,(t-t0)/dur):1,e=1-Math.pow(1-k,3);cur=from+(to-from)*e;$('kv').textContent=f2(cur);if(k<1)requestAnimationFrame(step)})(t0);
+
 [...$('pills').children].forEach((b,j)=>b.setAttribute('aria-pressed',j==i));spark()}
+
 function spark(){const x=i=>12+i*(276/(MO.length-1)),y=v=>40-(v-12.4)/1.2*34;$('sp').innerHTML='<polyline fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2" points="'+MO.map((m,i)=>x(i)+','+y(m[2])).join(' ')+'"/>'+MO.map((m,i)=>'<circle cx="'+x(i)+'" cy="'+y(m[2])+'" r="'+(i==sel?6:3)+'" fill="'+(i==sel?'#f2b705':'#fff')+'"/>').join('')}
+
 $('pills').innerHTML=MO.map((m,i)=>'<button type="button" aria-pressed="false">'+m[0]+'</button>').join('');
+
 [...$('pills').children].forEach((b,i)=>b.onclick=()=>show(i));show(sel);
+
 const T=[["UBICACION","Departamento, provincia y distrito de Lima."],["TIPOS_VIVIENDA","Inmueble cotizado: referencia, dirección y valor."],["CLIENTE","Datos personales, ingreso y documento."],["COTIZACIONES","Solicitud del cliente para una vivienda."],["OPERACIONES","Crédito originado: monto, cuota inicial, plazo y desembolso."],["TIPOS_CREDITO","Nuevo Crédito MIVIVIENDA y MIVIVIENDA Verde."],["ESTADOS_CREDITO","Evaluación, aprobado, desembolsado, rechazado, desistido."],["FECHA","Calendario mensual del análisis."],["MERCADO_MIVIVIENDA_LIMA","Créditos y monto total del mercado por mes."]];
+
 document.getElementById('tablas').innerHTML=T.map(t=>`<div class="card"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('');
+
 const Q=[[1, "Mayo 2026", "DISTRITO (UBICACION)", "¿Cuál es el DISTRITO con mayor aporte al INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) para mayo 2026?", "San Juan de Lurigancho: 1.17 pp de los 13.39% de mayo (24 de 275 créditos).", "Gráfico de barras agrupadas"], [2, "Mayo 2026", "CLIENTE (INGRESO)", "¿Cuál es el RANGO DE INGRESO del CLIENTE con mayor aporte al INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) para mayo 2026?", "S/5–8 mil: 6.96 pp, el tramo que más aporta en mayo.", "Gráfico de columnas agrupadas"], [3, "Marzo a setiembre 2026", "FECHA", "¿Cuál es la brecha en puntos porcentuales entre la meta de 15% y el INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK), mes a mes, de marzo a setiembre de 2026?", "La brecha va de 1.61 pp (mayo) a 2.31 pp (agosto); en promedio faltan 2.01 pp.", "Gráfico de columnas apiladas (indicador + brecha hasta la meta)"], [4, "Setiembre 2026", "MERCADO", "¿Cuál es el valor del INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) en setiembre 2026 y cuántos créditos adicionales necesita Interbank para alcanzar la meta de 15%?", "13.00% (zona amarilla). Faltan 2.00 pp: 40 créditos más (≈ S/ 10.0 millones al mes).", "Medidor (Gauge)"], [5, "Setiembre 2026", "CLIENTE", "¿Cuáles son los 5 CLIENTES con mayor monto desembolsado que sustentan el INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) en setiembre 2026?", "Kevin Condori lidera con S/ 407,900; el top 5 suma S/ 1,953,200.", "Tabla con barras de datos"], [6, "Marzo a setiembre 2026", "ESTADO DE CREDITO", "¿Cuántos puntos porcentuales del INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) dejó de captar Interbank por operaciones desistidas o rechazadas de marzo a setiembre de 2026?", "106 operaciones perdidas (58 desistidas, 48 rechazadas) ≈ 0.75 pp por mes. Recuperarlas todas llevaría el promedio de 12.99% a 13.74%: aún bajo la meta.", "Gráfico de columnas apiladas"], [7, "Marzo a setiembre 2026", "FECHA", "¿Cuál es el MES con mayor y menor valor del INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) de marzo a setiembre de 2026?", "Mayor: mayo (13.39%). Menor: agosto (12.69%). Diferencia de 0.70 pp; todos los meses en zona amarilla.", "Gráfico de líneas"], [8, "Marzo a setiembre 2026", "TIPO DE CREDITO", "¿Qué TIPO DE CRÉDITO tiene el mayor aporte promedio mensual al INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) de marzo a setiembre de 2026?", "Nuevo Crédito MIVIVIENDA: 11.06 pp promedio mensual, frente a 1.93 pp del Crédito MIVIVIENDA Verde.", "Gráfico de columnas apiladas"], [9, "Marzo a setiembre 2026", "OPERACIONES (MONTO_DESEMBOLSADO)", "¿Cuál es el monto total desembolsado en el mes con mayor valor del INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) en 2026?", "Mayo 2026 (13.39%): S/ 68.2 millones desembolsados, el mayor monto de los siete meses.", "Gráfico de líneas y columnas agrupadas"], [10, "Marzo a setiembre 2026", "VIVIENDA (TIPOS_VIVIENDA)", "¿Qué RANGO DE VALOR DEL INMUEBLE tiene el mayor aporte al INDICADOR MENSUAL DE PORCENTAJE DE PARTICIPACIÓN DE CRÉDITOS HIPOTECARIOS MIVIVIENDA EN LIMA (INTERBANK) de marzo a setiembre de 2026?", "S/250–350 mil: 6.52 pp acumulados de los 12.98 pp totales del periodo.", "Gráfico de columnas agrupadas"]];
+
 document.getElementById('qs').innerHTML=Q.map(q=>{const n=String(q[0]).padStart(2,'0');return `<article class="q"><div class="qh"><span class="qn">PREGUNTA ${n}</span><span class="chip">Periodo: ${q[1]}</span><span class="chip">Entidad: ${q[2]}</span><span class="chip">Visual: ${q[5]}</span></div><p class="qt">${q[3]}</p><div class="ans">${q[4]}</div><figure class="shot"><img src="imagenes/Pregunta${n}.jpg" alt="Pregunta ${n}" onload="this.parentNode.classList.add('ok')"><div class="ph"><b>Pregunta ${n}</b>Agrega tu captura en <code>imagenes/Pregunta${n}.jpg</code></div></figure></article>`}).join('');
+
 </script></body></html>
