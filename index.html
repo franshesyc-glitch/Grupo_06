@@ -77,6 +77,30 @@ table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--w);b
 figure.shot{margin:16px 0 0;border-radius:12px;overflow:hidden}
 figure.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:12px}
 
+/* Diagrama ER: fondo neutro y ancho limitado para que no ocupe toda la pantalla */
+#datos figure.shot{
+  box-sizing:border-box;
+  padding:18px;
+  background:#eaf0ed;
+  border:1px solid #d6e1da;
+  border-radius:14px;
+}
+#datos figure.shot img{
+  display:block;
+  width:100%;
+  max-width:760px;
+  max-height:560px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+  padding:12px;
+  box-sizing:border-box;
+  background:#fff;
+  border:1px solid #d6e1da;
+  border-radius:10px;
+}
+@media(max-width:600px){#datos figure.shot{padding:9px}#datos figure.shot img{width:100%;max-width:100%;max-height:440px;padding:6px}}
+
 /* Capturas de las preguntas 1 al 10: tamaño controlado y sin ampliar imágenes pequeñas */
 .q figure.shot img{
   display:block;
